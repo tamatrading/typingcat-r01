@@ -266,7 +266,7 @@ const AdminScreen: React.FC<AdminScreenProps> = ({
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-4">落下速度調整（1:ゆっくり 5:はやい）</h3>
+            <h3 className="text-xl font-semibold mb-4">タイムアウト速度（1:ゆっくり 5:はやい）</h3>
             <div className="flex items-center space-x-4">
               {[1, 2, 3, 4, 5].map((value) => (
                 <button
@@ -319,7 +319,7 @@ const AdminScreen: React.FC<AdminScreenProps> = ({
             <p className="mb-1">
               キーボードの表示: {showHands ? '表示' : '非表示'}
             </p>
-            <p className="mb-1">落下速度: {speed}</p>
+            <p className="mb-1">タイムアウト速度: {speed}</p>
             <p>ウィンドウ倍率: {windowSize}</p>
           </div>
         </div>
