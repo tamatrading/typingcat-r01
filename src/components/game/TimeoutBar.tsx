@@ -40,7 +40,7 @@ const TimeoutBar: React.FC<TimeoutBarProps> = ({ startTime, timeout, isPaused })
   };
 
   return (
-    <div className="w-full h-4 bg-gray-200/50 rounded-full overflow-hidden ring-2 ring-white/80">
+    <div className="w-full h-4 bg-white/30 rounded-full overflow-hidden ring-4 ring-white/80">
       <div
         className={`h-full transition-all duration-100 ${getBarColor()}`}
         style={{

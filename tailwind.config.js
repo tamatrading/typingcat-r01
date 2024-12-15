@@ -31,6 +31,13 @@ export default {
       },
       transitionProperty: {
         'width': 'width'
+      },
+      fontFamily: {
+        'game': ['"ヒラギノ丸ゴ Pro W4"', '"Hiragino Maru Gothic Pro"', '"メイリオ"', 'Meiryo', '"ＭＳ Ｐゴシック"', 'sans-serif'],
+        'pixel': ['"PixelMplus12"', '"ＭＳ Ｐゴシック"', 'sans-serif'],
+        'pop': ['"Corporate Logo Rounded"', '"コーポレート・ロゴ Rounded"', '"UD デジタル 教科書体 NK-R"', 'sans-serif'],
+        'cute': ['"しねきゃぷしょん"', '"Shine Cap"', '"ヒラギノ丸ゴ Pro W4"', 'sans-serif'],
+        'modern': ['"BIZ UDPゴシック"', '"Hiragino Kaku Gothic ProN"', '"ヒラギノ角ゴ ProN W3"', 'sans-serif']
       }
     },
   },

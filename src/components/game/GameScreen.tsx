@@ -82,7 +82,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
     {/* Main content */}
     <div className="relative z-10 flex flex-col items-center justify-center h-full">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 animate-gradient-x mb-2">
+        <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 animate-gradient-x -mb-2  font-cute">
           タイピングにゃんこ
         </h2>
         <button

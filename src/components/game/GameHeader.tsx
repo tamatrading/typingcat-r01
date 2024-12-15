@@ -30,21 +30,24 @@ const GameHeader: React.FC<GameHeaderProps> = ({
     <div className="text-center mb-2">
       <div className="flex justify-between items-start">
         <div className="flex-1 text-left">
-          <button
-            onClick={onAdminRequest}
-            className="flex items-center gap-1 px-2 py-0.5 text-xs rounded-md bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
-          >
-            <Settings className="w-4 h-4" />
-            管理
-          </button>
+<button
+  onClick={onAdminRequest}
+  className="flex items-center gap-2 px-3 py-1.5 text-sm rounded-md bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors"
+>
+  <Settings className="w-5 h-5" />
+  管理
+</button>
         </div>
         <div className="flex-1">
-          <p className={`text-2xl font-bold transform transition-all duration-300 ${
-            scoreAnimation ? 'scale-125 text-green-600' : ''
-          }`}>
-            スコア: {score}
-          </p>
-          <p className="text-base text-gray-600">ハイスコア: {highScore}</p>
+          <div className="mt-2"> {/* この div を追加してマージンを設定 */}
+
+            <p className={`text-3xl font-bold transform transition-all duration-300 ${
+              scoreAnimation ? 'scale-125 text-green-600' : ''
+            }`}>
+              スコア: {score}
+            </p>
+            <p className="text-base text-gray-600">ハイスコア: {highScore}</p>
+          </div>
         </div>
         <div className="flex-1 text-right">
           <button
@@ -55,7 +58,7 @@ const GameHeader: React.FC<GameHeaderProps> = ({
           </button>
         </div>
       </div>
-      <div className="flex justify-between items-center px-1 mt-1">
+      <div className="flex justify-between items-center px-1 -mt-2">
         <div>
           <p className="text-base">ステージ {totalStagesCompleted + 1}</p>
           {gameState === 'playing' && (
