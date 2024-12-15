@@ -1,6 +1,6 @@
 // ゲーム内で使用する画像のパス
 const gameImages = [
-  '/src/components/images/0m4DrTxBBkIIYVd1707690500_1707690507.png',  // スタート画面
+  '/src/components/images/0m4DrTxBBkIIYVd1707690500_1707690507.PNG',  // スタート画面
   '/src/components/images/JOtKu6umE2LVUJQ1707544468_1707544476.png',  // ゲームオーバー
   '/src/components/images/twX6RKGzQ0QBcBS1707543586_1707543594.png',  // ステージクリア
   '/src/components/images/K2UNhLpEtGEx6091707911946_1707912033.png',  // ゲームクリア
