@@ -26,8 +26,8 @@ function App() {
     const containerHeight = container.clientHeight;
 
     // コンテナの90%のサイズを計算
-    const maxWidth = containerWidth * 0.9;
-    const maxHeight = containerHeight * 0.9;
+    const maxWidth = containerWidth * 0.85;
+    const maxHeight = containerHeight * 0.85;
 
     // ゲームの基本サイズ
     const baseWidth = 780;
