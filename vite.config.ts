@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  base: './', // この行を追加
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
