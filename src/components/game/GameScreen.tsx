@@ -90,8 +90,8 @@ const GameScreen: React.FC<GameScreenProps> = ({
           className="group relative w-64 h-64 mx-auto mb-8 cursor-pointer transition-transform duration-300 hover:scale-105"
         >
           <img
-            src="src/components/images/cat1.png"
-            alt="Typing Hanako"
+            src="/images/cat1.png"
+            alt="Typing cat"
             className="w-full h-full object-contain"
           />
         </button>
