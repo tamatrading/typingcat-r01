@@ -8,8 +8,9 @@ import { GameSettings, ScorePopup, CurrentWord, Particle } from '../types/game';
 import {
   stageBackgrounds,
   stageSets,
-  romajiMap,
+  romajiMap
 } from '../constants/gameConstants';
+import { preloadGameImages } from '../utils/imagePreloader';
 
 interface Props {
   settings: GameSettings;
@@ -43,6 +44,7 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest }) => {
   const [characterFrequency, setCharacterFrequency] = useState<
     Record<string, number>
   >({});
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const handleAdminRequest = useCallback(() => {
     if (gameState === 'playing') {
@@ -732,6 +734,19 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest }) => {
     }
   }, [gameState, handleKeyDown]);
 
+  // 画像の先読み
+  useEffect(() => {
+    preloadGameImages()
+      .then(() => {
+        setImagesLoaded(true);
+      })
+      .catch(error => {
+        console.error('Failed to preload images:', error);
+        // エラーが発生しても、ゲームは続行できるようにする
+        setImagesLoaded(true);
+      });
+  }, []);
+
   useEffect(() => {
     if (gameState === 'playing' && !currentWord && !isTransitioning) {
       setCurrentWord(createNewWord());
@@ -752,6 +767,17 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest }) => {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [gameState, resetGame, nextStage]);
+
+  // 画像の読み込みが完了するまでローディング表示
+  if (!imagesLoaded) {
+    return (
+      <div className="w-[780px] flex justify-center bg-gray-100 p-2">
+        <div className="w-[700px] h-[525px] p-3 bg-gradient-to-b from-blue-100 to-blue-200 shadow-xl rounded-lg mx-auto flex items-center justify-center">
+          <div className="text-xl text-gray-600">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-[780px] flex justify-center bg-gray-100 p-2">
