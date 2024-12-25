@@ -1,8 +1,8 @@
 import React from 'react';
-import { Dog } from 'lucide-react';
 import { CurrentWord, Particle, ScorePopup } from '../../types/game';
 import TimeoutBar from './TimeoutBar';
 import { useState, useEffect } from 'react';
+import { clearSentences } from '../../constants/gameConstants';
 
 interface GameScreenProps {
   gameState: string;
@@ -148,19 +148,30 @@ const GameScreen: React.FC<GameScreenProps> = ({
       {/* Stage Clear Screen */}
       {gameState === 'stageClear' && (
   <div className="absolute inset-0 bg-gradient-to-b from-emerald-300 via-green-400 to-emerald-500 flex flex-col items-center justify-center text-white">
-    <h2 className="text-4xl mb-4 font-bold animate-bounce">
+    <h2 className="text-4xl mb-8 font-bold animate-bounce">
       ステージクリア！
     </h2>
-    <button
-      onClick={nextStage}
-      className="group relative w-64 h-64 cursor-pointer transition-transform duration-300 hover:scale-110"
-    >
-      <img
-        src="/images/cat3.png"
-        alt="Stage Clear"
-        className="w-full h-full object-contain"
-      />
-    </button>
+    <div className="relative">
+      <button
+        onClick={nextStage}
+        className="group relative w-64 h-64 cursor-pointer transition-transform duration-300 hover:scale-110"
+      >
+        <img
+          src="/images/cat3.png"
+          alt="Stage Clear"
+          className="w-full h-full object-contain"
+        />
+      </button>
+      <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 w-80">
+        <div className="relative bg-white text-gray-800 p-4 rounded-2xl shadow-lg">
+          <p className="text-lg text-center">
+            {clearSentences[Math.floor(Math.random() * clearSentences.length)]}
+          </p>
+          {/* 吹き出しの尻尾 */}
+          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[12px] border-l-transparent border-t-[16px] border-t-white border-r-[12px] border-r-transparent" />
+        </div>
+      </div>
+    </div>
     <p className="text-white -mt-2 animate-pulse">
       画像をクリックまたはスペースキーで次のステージへ
     </p>
