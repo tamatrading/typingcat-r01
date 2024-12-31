@@ -8,7 +8,7 @@ import { GameSettings, ScorePopup, CurrentWord, Particle } from '../types/game';
 import {
   stageBackgrounds,
   stageSets,
-  romajiMap
+  romajiMap,
 } from '../constants/gameConstants';
 import { preloadGameImages } from '../utils/imagePreloader';
 
@@ -740,7 +740,7 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest }) => {
       .then(() => {
         setImagesLoaded(true);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('Failed to preload images:', error);
         // エラーが発生しても、ゲームは続行できるようにする
         setImagesLoaded(true);
