@@ -36,6 +36,7 @@ const KeyboardHands: React.FC<Props> = ({
     I: { hand: 'right', finger: 1, key: 'I' },
     O: { hand: 'right', finger: 2, key: 'O' },
     P: { hand: 'right', finger: 3, key: 'P' },
+    '-': { hand: 'right', finger: 3, key: '-' },
     // Left hand - home row
     A: { hand: 'left', finger: 3, key: 'A' },
     S: { hand: 'left', finger: 2, key: 'S' },
