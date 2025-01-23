@@ -4,6 +4,7 @@ import KeyboardHands from './KeyboardHands';
 import KeyboardLayout from './KeyboardLayout';
 import GameHeader from './game/GameHeader';
 import GameScreen from './game/GameScreen';
+import HelpButton from './HelpButton';
 import { GameSettings, ScorePopup, CurrentWord, Particle } from '../types/game';
 import {
   stageBackgrounds,
@@ -15,9 +16,10 @@ import { preloadGameImages } from '../utils/imagePreloader';
 interface Props {
   settings: GameSettings;
   onAdminRequest: () => void;
+  onHelpRequest: () => void;
 }
 
-const TypingGame: React.FC<Props> = ({ settings, onAdminRequest }) => {
+const TypingGame: React.FC<Props> = ({ settings, onAdminRequest, onHelpRequest }) => {
   const [stage, setStage] = useState(settings.selectedStages[0]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -824,7 +826,9 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest }) => {
           settings={settings}
           currentBackground={currentBackground}
           stageBackgrounds={stageBackgrounds}
-        />
+        >
+          <HelpButton onClick={onHelpRequest} />
+        </GameScreen>
 
         {gameState === 'playing' && currentWord && settings.showHands && (
           <div className="absolute bottom-0 left-0 right-0 transform translate-y-[30%]">

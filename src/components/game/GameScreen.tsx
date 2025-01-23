@@ -31,6 +31,7 @@ interface GameScreenProps {
   };
   currentBackground: string;
   stageBackgrounds: Record<number, string>;
+  children?: React.ReactNode;
 }
 
 const GameScreen: React.FC<GameScreenProps> = ({
@@ -56,6 +57,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
   settings,
   currentBackground,
   stageBackgrounds,
+  children
 }) => {
   const [successWord, setSuccessWord] = useState<string | null>(null);
   const clearMessage = useMemo(
@@ -382,6 +384,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
           +{popup.score}
         </div>
       ))}
+      {children}
     </div>
   );
 };
