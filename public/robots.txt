@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://type01.manabi-time.com/sitemap.xml
