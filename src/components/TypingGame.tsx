@@ -851,5 +851,4 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest, onHelpRequest }
     </div>
   );
 };
-
 export default TypingGame;

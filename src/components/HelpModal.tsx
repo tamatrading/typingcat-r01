@@ -22,7 +22,7 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
         <div className="p-8">
           <div className="flex items-center gap-2 mb-6">
             <HelpCircle className="w-8 h-8 text-blue-500" />
-            <h2 className="text-2xl font-bold text-gray-800">タイピングにゃんこの遊び方</h2>
+            <h2 className="text-2xl font-bold text-gray-800">タイピングきゃっとの遊び方</h2>
           </div>
 
           <div className="space-y-6">
