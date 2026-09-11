@@ -94,7 +94,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
                 className="group relative w-64 h-64 mx-auto mb-8 cursor-pointer transition-transform duration-300 hover:scale-105"
               >
                 <img
-                  src="/images/cat1.png"
+                  src={`${import.meta.env.BASE_URL}images/cat1.png`}
                   alt="Typing cat"
                   className="w-full h-full object-contain"
                 />
@@ -134,7 +134,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
 
               <div className="relative w-48 h-48">
                 <img
-                  src="/images/cat2.png"
+                  src={`${import.meta.env.BASE_URL}images/cat2.png`}
                   alt="Game Over"
                   className="w-full h-full object-contain"
                 />
@@ -162,7 +162,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
               className="group relative w-64 h-64 cursor-pointer transition-transform duration-300 hover:scale-110"
             >
               <img
-                src="/images/cat3.png"
+                src={`${import.meta.env.BASE_URL}images/cat3.png`}
                 alt="Stage Clear"
                 className="w-full h-full object-contain"
               />
@@ -219,7 +219,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
 
               <div className="relative w-64 h-64 -mt-8">
                 <img
-                  src="/images/cat4.png"
+                  src={`${import.meta.env.BASE_URL}images/cat4.png`}
                   alt="Game Clear"
                   className="w-full h-full object-contain"
                 />
