@@ -28,6 +28,7 @@ interface GameScreenProps {
     isRandomMode: boolean;
     windowSize: number;
     showHands: boolean;
+    uppercaseRoma: boolean;
   };
   currentBackground: string;
   stageBackgrounds: Record<number, string>;
@@ -315,7 +316,9 @@ const GameScreen: React.FC<GameScreenProps> = ({
             {stage > 1 && currentWord && !showSuccessEffect && (
               <div className="text-gray-200 text-xl space-y-0.5">
                 {convertToRomaji(currentWord.text).map((hint, index) => (
-                  <div key={index}>{hint}</div>
+                  <div key={index}>
+                    {settings.uppercaseRoma ? hint : hint.toLowerCase()}
+                  </div>
                 ))}
               </div>
             )}

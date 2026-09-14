@@ -843,6 +843,7 @@ const TypingGame: React.FC<Props> = ({ settings, onAdminRequest, onHelpRequest }
                 activeKey={currentWord?.text || ''}
                 currentInput={input}
                 showSuccessEffect={showSuccessEffect}
+                uppercaseRoma={settings.uppercaseRoma}
               />
             </div>
           </div>
