@@ -29,6 +29,7 @@ interface GameScreenProps {
     windowSize: number;
     showHands: boolean;
     uppercaseRoma: boolean;
+    showRomajiHint: boolean;
   };
   currentBackground: string;
   stageBackgrounds: Record<number, string>;
@@ -313,7 +314,7 @@ const GameScreen: React.FC<GameScreenProps> = ({
                 {currentWord.text}
               </div>
             )}
-            {stage > 1 && currentWord && !showSuccessEffect && (
+            {settings.showRomajiHint && stage > 1 && currentWord && !showSuccessEffect && (
               <div className="text-gray-200 text-xl space-y-0.5">
                 {convertToRomaji(currentWord.text).map((hint, index) => (
                   <div key={index}>
